@@ -1,2 +1,10 @@
-package com.tts.twitterproject.repository;public interface RoleRepository {
+package com.tts.twitterproject.repository;
+
+import com.tts.twitterproject.model.Role;
+import org.springframework.data.repository.CrudRepository;
+import org.springframework.stereotype.Repository;
+
+@Repository
+public interface RoleRepository extends CrudRepository<Role, Long> {
+    Role findByRole(String role);
 }
