@@ -7,8 +7,10 @@ import lombok.NoArgsConstructor;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.OnDelete;
 import org.hibernate.annotations.OnDeleteAction;
+import org.hibernate.validator.constraints.Length;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotEmpty;
 import java.util.Date;
 
 @Data
@@ -26,12 +28,14 @@ public class Tweet {
     @JoinColumn(name = "tweet-id")
     @OnDelete(action = OnDeleteAction.CASCADE)
     private User user;
-// TODO(): implement tags
+    //TODO(): implement tags
 //    @ManyToMany(fetch = FetchType.LAZY, cascade = {CascadeType.PERSIST, CascadeType.MERGE})
 //    @JoinTable(name = "tweet_tag", joinColumns = @JoinColumn(name = "tweet_id"),
 //    inverseJoinColumns = @JoinColumn(name = "tag_id"))
 //    private List<Tag> tags;
 
+    @NotEmpty(message = "Tweet cannot be empty")
+    @Length(max = 280, message = "Tweet cannot have more than 280 characters")
     private String message;
 
     @CreationTimestamp

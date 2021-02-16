@@ -5,6 +5,7 @@ import com.tts.twitterproject.model.User;
 
 import java.util.List;
 
+
 public interface TweetService {
 
     List<Tweet> findAll();

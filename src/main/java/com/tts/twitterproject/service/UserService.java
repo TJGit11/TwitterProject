@@ -1,6 +1,7 @@
 package com.tts.twitterproject.service;
 
 import com.tts.twitterproject.model.User;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 

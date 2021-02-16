@@ -3,9 +3,11 @@ package com.tts.twitterproject.service;
 import com.tts.twitterproject.model.Tweet;
 import com.tts.twitterproject.model.User;
 import com.tts.twitterproject.repository.TweetRepository;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+@Service
 public class TweetServiceImpl implements TweetService{
 
     private TweetRepository tweetRepository;
