@@ -13,7 +13,6 @@ public class WebMvcConfiguration implements WebMvcConfigurer {
         // TODO(): refactor so that there isn't a full constructor statement
         BCryptPasswordEncoder bCryptPasswordEncoder =
                 new BCryptPasswordEncoder();
-
         return bCryptPasswordEncoder;
     }
 }
